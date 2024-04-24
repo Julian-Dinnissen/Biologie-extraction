@@ -16,7 +16,7 @@ def open_excel() -> openpyxl.worksheet:
     return sheet
 
 
-def select_sheet(sheet: openpyxl.worksheet) -> tuple:
+def select_sheet(sheet: openpyxl.worksheet) -> tuple:# de biolgiepagina begrippen uit excel naar een lijst
     Begrippen = []
     definities = []
     for cell in sheet["C"]:
@@ -99,5 +99,5 @@ definities = select_sheet(open_excel())[1]
 
 print(len(concepts))
 
-# save_concepten_to_Excel(open_excel(), compare(begrips, concepts, definities)[0], "F")
-# save_concepten_to_Excel(open_excel(), compare(begrips, concepts, definities)[1], "G")
+save_concepten_to_Excel(open_excel(), compare(begrips, concepts, definities)[0], "F")
+save_concepten_to_Excel(open_excel(), compare(begrips, concepts, definities)[1], "G")
